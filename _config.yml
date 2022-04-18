@@ -20,18 +20,29 @@
 
 title: roblog
 email: rob@blue58.co
+repository: pkboy/pkboy.github.io
 description: >- # this means to ignore newlines until "baseurl:"
   a place to put some stuff.
-baseurl: "/pages" # the subpath of your site, e.g. /blog
-url: "https://pkboy.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-domain: "pkboy.github.io"
+#baseurl: "" # the subpath of your site, e.g. /blog
+#url: "https://pkboy.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+#domain: "pkboy.github.io"
 twitter_username: robchankh
 github_username:  pkboy
 
 # Build settings
-theme: jekyll-theme-hacker
+#theme: minima
+remote_theme: pages-themes/hacker@v0.2.0
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
+
+show_excerpts: true
+
+roblog:
+  date_format: "%b %-d, %Y"
+  social_links:
+    twitter: robchankh
+    github:  pkboy
 
 # Exclude from processing.
 # The following items will not be processed, by default.
