@@ -20,6 +20,7 @@
 
 title: roblog
 email: rob@blue58.co
+author: rob
 repository: pkboy/pkboy.github.io
 description: >- # this means to ignore newlines until "baseurl:"
   a place to put some stuff.
