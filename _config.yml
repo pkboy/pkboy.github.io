@@ -24,9 +24,9 @@ author: rob
 repository: pkboy/pkboy.github.io
 description: >- # this means to ignore newlines until "baseurl:"
   a place to put some stuff.
-#baseurl: "" # the subpath of your site, e.g. /blog
-#url: "https://pkboy.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-#domain: "pkboy.github.io"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://pkboy.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+domain: "pkboy.github.io"
 twitter_username: robchankh
 github_username:  pkboy
 
@@ -36,6 +36,7 @@ remote_theme: pages-themes/hacker@v0.2.0
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
+  - jekyll-gist
 
 show_excerpts: true
 

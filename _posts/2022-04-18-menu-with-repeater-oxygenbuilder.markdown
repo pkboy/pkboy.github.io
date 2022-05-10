@@ -2,8 +2,12 @@
 layout: post
 title:  "Using a Repeater to render a Wordpress Menu - Part 1"
 date:   2022-04-18 15:47:30 +0800
+category: oxygenbuilder
 tags: oxygenbuilder css js wordpress
 ---
+
+Edit: Post was updated on 22/4/2022 to fix the ```get_menu_item_featured_image``` function.
+
 [OxygenBuilder](https://oxygenbuilder.com/) already has built-in Menu and Pro Menu elements that render existing Wordpress menus that are responsive and customisable -- mostly.
 
 This guide will teach you how to build a menu with a repeater and some code snippets.
@@ -146,7 +150,7 @@ function get_menu_item_featured_image() {
 	$menu_item = wp_setup_nav_menu_item( $post );
 	$default_url = 'https://placekitten.com/200/200';
 	
-  if( isset( $menu_item->object_id ) ) {
+  if( isset( $menu_item->object_id ) && has_post_thumbnail( $menu_item->object_id ) ) {
 		$thumbnail_id = get_post_thumbnail_id( $menu_item->object_id );
 		if( isset( $thumbnail_id ) ) {
 			$img_object = wp_get_attachment_image_src( $thumbnail_id, 'thumbnail' );

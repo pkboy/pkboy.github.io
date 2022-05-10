@@ -3,3 +3,80 @@
 
 @import "{{ site.theme }}";
 
+.mb--2 {
+  margin-bottom: 2rem;
+}
+
+.toggle > h4 {
+  cursor: pointer;
+  width: fit-content;
+}
+
+.toggle > h4:after {
+  position: absolute;
+  padding-left: 8px;
+}
+
+.toggle-closed > h4:after {
+  content: '>';
+}
+.toggle-open > h4:after {
+  content: 'v';
+}
+
+.toggle-closed + div {
+  display: none;
+}
+
+.toggle-open + div {
+  display: block;
+}
+
+.inline {
+  li {
+    display: inline;
+  }
+}
+
+a#back {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.blog-nav {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 480px) {
+  .blog-nav-row {
+    flex-direction: column;
+  }
+}
+
+.blog-nav-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  a {
+    max-width: 240px;
+  }
+}
+
+a.prev-link {
+  align-self: flex-start;  
+}
+
+a.prev-link:before {
+  content: '«';
+  padding-right: 1rem;
+}
+
+a.next-link {
+  align-self: flex-end;
+}
+
+a.next-link:after {
+  content: '»';
+  padding-left: 1rem;
+}
+
