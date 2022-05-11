@@ -14,7 +14,7 @@ Oxygen has some support to handle these, but they are pretty basic and just call
 
 So here we will use a repeater, some JS and CSS to build out an element that has the different categories in tabs and a collection of their posts inside each tab.  
 
-Here is the demo of the thing [http://thathappenedto.us/test/](http://thathappenedto.us/test/)
+Here is the demo of the thing [http://thathappenedto.us/repeater-for-category/](http://thathappenedto.us/repeater-for-category/)
 
 ## The Process
 
@@ -599,7 +599,7 @@ Actually for I was curious about pagination and did it with the following change
 
 ### End
 
-And again here is the demo: [http://thathappenedto.us/test/](http://thathappenedto.us/test/)
+And again here is the demo: [http://thathappenedto.us/repeater-for-category/](http://thathappenedto.us/repeater-for-category/)
 
-
+As usual this thing hasn't been thoroughly tested by myself.  
 If you have any questions you can DM me on twitter [@robchankh](https://twitter.com/robchankh) or leave a comment on FB where I'll post this.
