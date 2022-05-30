@@ -6,7 +6,7 @@ category: oxygenbuilder
 tags: oxygenbuilder php wordpress
 ---
 
-> This might not work on the front-end
+> This might not work on the front-end because of iframe embedding thing that Wordpress does. Content is added, iframe is loaded, but the position absolute and clip: rect style is being applied.
 
 OxygenBuilder disables the Wordpress theme and renders content using its own templates, so if something isn't created for a specific content type, Oxygen will render the page using the catch-all template.
 
