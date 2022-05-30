@@ -5,6 +5,9 @@ date:   2022-05-30 00:00:00 +0800
 category: oxygenbuilder
 tags: oxygenbuilder php wordpress
 ---
+
+> This might not work on the front-end
+
 OxygenBuilder disables the Wordpress theme and renders content using its own templates, so if something isn't created for a specific content type, Oxygen will render the page using the catch-all template.
 
 This is fine for most cases, except when you want it to embed a post.
