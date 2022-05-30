@@ -9,9 +9,11 @@ OxygenBuilder disables the Wordpress theme and renders content using its own tem
 
 This is fine for most cases, except when you want it to embed a post.
 
-Generally when you have the permalink for a post and add "/embed" or "/embed/" to the URL, WP will use a secondary embed template to render that post's content, and conveniently it's usually just the post's title (with link) and the featured image. But when /embed is requested with Oxygen, it doesn't know where to look so it goes to the catch-all template which makes it... render the whole page, which isn't the correct behaviour.
+Generally when you have the permalink for a post and add "/embed" or "/embed/" to the URL, WP will use a secondary embed template to render that post's content, and conveniently it's usually just the post's title (with link) and the featured image. But when /embed is requested with Oxygen, it doesn't know where to look so it goes to the catch-all template which makes it... render the whole page, which isn't the desired behaviour unless you want a whole page to be embedded inside another page.
 
-If you require this functionality, we can copy Wordpress' implementation of the ```get_embed_template``` function, or most of it, to achieve similar results in Oxygen.
+If you require this functionality, we can achieve this with some code.
+
+
 
 ___
 
@@ -134,6 +136,6 @@ Then if you want to see what the Embed looks like [http://thathappenedto.us/2022
 
 ## Conclusion
 
-This was inspired by Supa Mike's post about multiple headers for Polylang [https://oxygen4fun.supadezign.com/tutorials/how-to-have-different-menus-with-polylang/](https://oxygen4fun.supadezign.com/tutorials/how-to-have-different-menus-with-polylang/)
+Credit to Supa Mike's post about multiple headers for Polylang [https://oxygen4fun.supadezign.com/tutorials/how-to-have-different-menus-with-polylang/](https://oxygen4fun.supadezign.com/tutorials/how-to-have-different-menus-with-polylang/) for seeding the idea of using a shortcode to render different content.
 
 If you have any questions you can DM me on twitter [@robchankh](https://twitter.com/robchankh) or leave a comment on FB where I'll post this.
