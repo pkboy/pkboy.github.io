@@ -13,11 +13,13 @@ Generally when you have the permalink for a post and add "/embed" or "/embed/" t
 
 If you require this functionality, we can achieve this with some code.
 
-
-
 ___
 
 > This guide assumes some basic knowledge of Wordpress and Oxygen Builder
+
+## Requirements
+
+This tutorial is for Oxygen 4.0, and Wordpress 5.9+ since that was what I made it in.
 
 ## The Process
 
