@@ -87,6 +87,7 @@ function oxy_get_post_template() {
 	global $oxygen_doing_oxygen_elements;
 	$oxygen_doing_oxygen_elements = true;
 	$result = do_oxygen_elements($json);
+	$oxygen_doing_oxygen_elements = false;
 	return $result;
 }
 
@@ -130,7 +131,7 @@ Then if you want to see what the Embed looks like [http://thathappenedto.us/2022
 
 *		As I said, just doing this by following Oxygen's code in their plugin so I'm not 100% sure this is the correct way of doing it.
 
-*		Code has not been tested 100%, haven't accounted for URLs that follow different permalink pattern.
+*		Code has not been thoroughly tested, haven't accounted for URLs that follow different permalink pattern, or checked to see if any adverse effects can occur due to changing the ```$oxygen_doing_oxygen_elements``` variable, but I turned it on and off in the code.
 
 *		Use at own risk, can probably add more checks for ```post_types``` and other checks to ensure it won't break anything.
 
