@@ -114,22 +114,25 @@ To get the ID for either the Full Post or Embed Post template you go to their ed
 </div>
 
 ```php
-function oxy_load_wp_embed() {
-	if( is_embed_element() ) {
-		print_embed_scripts();
-	}
+function oxy_load_wp_embeds() {
 	if( get_option( 'oxygen_vsb_disable_embeds' ) != true ) {
-		wp_enqueue_script('wp-embed');
+		wp_enqueue_script('wp-embed'); // just in case
+		if( is_embed_element() ) {
+			print_embed_scripts();
+			// print_embed_styles();
+		}
 	}
 }
 
-add_action('wp_footer', 'oxy_load_wp_embed', 11);
+add_action('wp_footer', 'oxy_load_wp_embeds', 11);
 
 ```
 
-In this bit, we print the JS needed for the embedded ```iframe``` to notify the embedder that it has finished loadin, and how to handle other events like clicking links inside that iframe.  
+In this bit, we print the JS needed for the embedded ```iframe``` to notify the embedder that it has finished loading, and how to handle other events like clicking links inside that iframe. I also enqueue the script for processing embeds in case it isn't already there.  
   
-I also check with Oxygen's Bloat Eliminator to respect that setting because it seems like Oxygen doesn't load the script regardless of the Bloat Eliminator setting until the wp-embed script has been loaded once before.
+There is a ```print_embed_styles``` function as well which prints the styles from the iframe header but that isn't required unless there's something weird happening then you can uncomment it.  
+  
+I also check with Oxygen's Bloat Eliminator to respect that setting.
 
 ___
 
