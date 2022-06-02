@@ -6,6 +6,8 @@ category: oxygenbuilder
 tags: oxygenbuilder php wordpress
 ---
 
+> Original tutorial was made only for Oxygen 4.0, has since been updated for Oxygen 3.8.1+
+
 OxygenBuilder disables the Wordpress theme and renders content using its own templates, so if something isn't created for a specific content type, Oxygen will render the page using the catch-all template.
 
 This is fine for most cases, except when you want it to embed a post.
@@ -20,7 +22,7 @@ ___
 
 ## Requirements
 
-This tutorial is for Oxygen 4.0, and Wordpress 5.9+ since that was what I made it in.  
+This tutorial is for Oxygen 3.8.1+, and Wordpress 5.9+ since that was what I made it in.  
 Ensure that "Disables the automatic embedding of some content (YouTube videos, Tweets, etc.,) when pasting the URL into your blog posts" in Oxygen's Bload Eliminator is **unchecked**.
 
 ## The Process
@@ -80,18 +82,35 @@ function oxy_get_post_template() {
 	if ( is_embed_element() ) {
 		// embed is in this URL, likely not as part of another word...
 		// this ID is the template ID of the one used to render embedded posts.
-		$template_id = 133;
+		$template_id = 12;
 	} else {
 		// no embed found at end of URL so this is the template ID for the Full Post template.
-		$template_id = 134;
+		$template_id = 13;
 	}
 	
-	$json = oxygen_get_combined_tree( $template_id );
+	$result = "";
 	
-	global $oxygen_doing_oxygen_elements;
-	$oxygen_doing_oxygen_elements = true;
-	$result = do_oxygen_elements($json);
-	$oxygen_doing_oxygen_elements = false;
+	if( function_exists( 'do_oxygen_elements') ) {
+		// get shortcodes with 4.0
+		$json = oxygen_get_combined_tree( $template_id );
+		global $oxygen_doing_oxygen_elements;
+		$oxygen_doing_oxygen_elements = true;
+		$result = do_oxygen_elements($json);
+		$oxygen_doing_oxygen_elements = false;
+	} else {
+		// get shortcodes with 3.x
+		$tree = array();
+		global $ct_template_id;
+		$ct_template_id = $template_id;
+		$oxygen_vsb_css_files_to_load[] = get_the_ID();
+		$oxygen_vsb_css_files_to_load[] = $template_id;
+		$combinedCodes = oxygen_get_combined_shortcodes($template_id);
+		$tree['children'] = $combinedCodes['content'];
+		$shortcodes_json = json_encode($tree);
+		$shortcodes = components_json_to_shortcodes($shortcodes_json);
+		$result = do_shortcode( $shortcodes );
+	}
+	
 	return $result;
 }
 
