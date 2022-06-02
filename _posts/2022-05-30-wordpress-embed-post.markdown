@@ -6,8 +6,6 @@ category: oxygenbuilder
 tags: oxygenbuilder php wordpress
 ---
 
-> Original tutorial was made only for Oxygen 4.0, has since been updated for Oxygen 3.8.1+
-
 OxygenBuilder disables the Wordpress theme and renders content using its own templates, so if something isn't created for a specific content type, Oxygen will render the page using the catch-all template.
 
 This is fine for most cases, except when you want it to embed a post.
@@ -15,6 +13,8 @@ This is fine for most cases, except when you want it to embed a post.
 Generally when you have the permalink for a post and add "/embed" or "/embed/" to the URL, WP will use a secondary embed template to render that post's content, and conveniently it's usually just the post's title (with link) and the featured image. But when /embed is requested with Oxygen, it doesn't know where to look so it goes to the catch-all template which makes it... render the whole page, which isn't the desired behaviour unless you want a whole page to be embedded inside another page.
 
 If you require this functionality, we can achieve this with some code.
+
+> Original tutorial was made only for Oxygen 4.0, has since been updated for Oxygen 3.8.1+
 
 ___
 
