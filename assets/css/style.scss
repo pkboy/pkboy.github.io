@@ -47,6 +47,33 @@ a#back {
   margin-bottom: 1rem;
 }
 
+img {
+  cursor: pointer;
+}
+
+#img-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(100, 100, 100, 0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+#img-modal.open {
+  display: flex;
+}
+
+#img-modal__img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: cover;
+}
+
 @media (max-width: 480px) {
   .blog-nav-row {
     flex-direction: column;

@@ -34,3 +34,27 @@ layout: default
     {% endif %}</div>
 </div>
 
+<div id="img-modal" class="">
+  <img id="img-modal__img" />
+</div>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+    const closeModal = (e) => {
+      document.getElementById("img-modal").classList.remove("open")
+      e.stopPropagation();
+    }
+
+    document.getElementById("img-modal").onclick = closeModal
+
+    document.getElementById("img-modal__img").onclick = closeModal
+
+    const imgs = document.querySelectorAll("img")
+    imgs.forEach((img) => {
+      img.onclick = (e) => {
+        document.getElementById("img-modal__img").src = e.target.src
+        document.getElementById("img-modal").classList.add("open")
+      }
+    })
+	});
+</script>
