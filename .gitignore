@@ -5,3 +5,5 @@ _site
 .DS_Store
 vendor
 serve.sh
+_posts/private
+_drafts

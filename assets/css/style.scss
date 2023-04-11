@@ -107,3 +107,14 @@ a.next-link:after {
   padding-left: 1rem;
 }
 
+code.highlighter-rouge, .highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #ffd0f6;
+}
+
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #d7f792;
+}
+
+li {
+  margin-bottom: 1rem;
+}
